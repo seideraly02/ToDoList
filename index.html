@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <script defer src="myscript.js"></script>
+</head>
+
+<body>
+
+    <section class="hero">
+        <div class="backgroundimg-container">
+            <div class="container navbar-container">
+                <a class="logo">Tour Guide</a>
+                <div class="navigation">
+                    <a class="navigation-link" href="">Главная</a>
+                    <a class="navigation-link" href="">О проекте</a>
+                    <div class="linkcontainer">
+                        <button class="navigation-link navigation-btn" href="">Функции</button>
+                    </div>
+                    <a class="navigation-link" href="">Страны</a>
+                    <button class="nav-btn btn phone-nav-btn">Скачать</button>
+                </div>
+                <button class="nav-btn btn">Скачать</button>
+                <button class="menu-btn"><img src="img/menu-icon.png" alt=""></button>
+            </div>
+
+            <div class="container hero-container">
+                <div class="content-container">
+                    <img src="img/vector1.png" alt="">
+                    <h1 class="heading" style="margin-bottom: 184px;">Путешествуй по миру с умным туристическим помощником</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="brands">
+        <div class="container brand-container">
+            <img src="img/fly emirates.png" alt="">
+            <img src="img/trivago.png" alt="">
+            <img src="img/airbnb.png" alt="">
+            <img src="img/turkish airlines.png" alt="">
+            <img src="img/swiss.png" alt="">
+        </div>
+    </section>
+
+    <section class="category">
+        <div class="container category-container">
+            <p class="tag"></p>
+            <h1 class="global-heading">Что предлагает Tour Guide</h1>
+            <div class="category-wrapper">
+                <div class="card">
+                    <img src="img/g1.png" alt="">
+                    <h4>Индивидуальные маршруты</h4>
+                    <p>Tour Guide использует технологии искусственного интеллекта, чтобы создавать для вас персонализированные маршруты.
+                        Алгоритмы учитывают ваши интересы, предпочтения, продолжительность поездки и даже текущую погоду в регионе.
+                        Забудьте о типовых путеводителях — получайте уникальный маршрут, идеально подходящий именно вам.</p>
+                </div>
+                <div class="card">
+                    <img src="img/g2.png" alt="">
+                    <h4>Поиск отелей</h4>
+                    <p>Благодаря интеграции с популярными сервисами бронирования, Tour Guide позволяет быстро находить надёжное и проверенное жильё.
+                        Вы можете сравнивать цены, читать отзывы, проверять доступность и бронировать прямо в приложении.
+                        Удобство, безопасность и экономия времени — всё в одном интерфейсе.
+                        </p>
+                </div>
+                <div class="card">
+                    <img src="img/g3.png" alt="">
+                    <h4>Чат с AI</h4>
+                    <p>Встроенный AI-ассистент работает как ваш цифровой гид: он отвечает на вопросы о визах, правилах въезда, транспорте, местных законах, погоде и культурных особенностях.
+                        Он может порекомендовать, где поесть, какие события проходят рядом, как добраться из аэропорта — и всё это в реальном времени.
+                        Поддерживаются несколько языков, чтобы вы чувствовали себя уверенно в любой стране</p>
+                </div>
+                <div class="card">
+                    <img src="img/g4.png" alt="">
+                    <h4>Безопасность</h4>
+                    <p>Мы заботимся о вашей безопасности: в приложении собраны контакты экстренных служб, ближайших больниц, посольств и других важных учреждений.
+                        Также доступны советы по поведению в другой культуре, чтобы избежать недоразумений или нарушений местных норм.
+                        Tour Guide поможет вам чувствовать себя уверенно, даже если вы впервые за границей</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="amazing-banner">
+        <div class="banner">
+            <div class="container">
+                <div class="banner-text-container">
+                    <h1 class="global-heading">Tour Guide сделает каждое путешествие особенным</h1>
+                    <img src="img/line asset.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="promotion">
+        <div class="container promotion-container">
+          <div class="text-content">
+            <p class="tag"> </p>
+            <h1 class="global-heading">Удобный интерфейс приложении</h1>
+          </div>
+      
+          <div class="carousel" id="customCarousel">
+            <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="carousel-track-container">
+              <ul class="carousel-track" id="carouselTrack">
+                <li class="carousel-slide"><img src="img/Destination 1.png" alt="Лондон"></li>
+                <li class="carousel-slide"><img src="img/Destination 2.png" alt="Амстердам"></li>
+                <li class="carousel-slide"><img src="img/Destination 3.png" alt="Рим"></li>
+                <li class="carousel-slide"><img src="img/Destination 4.png" alt="Берлин"></li>
+                <li class="carousel-slide"><img src="img/Destination 1.png" alt="Копия 1"></li>
+                <li class="carousel-slide"><img src="img/Destination 2.png" alt="Копия 2"></li>
+              </ul>
+            </div>
+            <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+          </div>          
+          
+        </div>
+      </section>
+    
+      
+    <section class="promotion-packages">
+        <div class="promotion-packages-container">
+            <div class="nature cardp">
+                <div class="text">
+                    <h1 class="global-heading">Исследуй природу с Tour Guide</h1>
+                    <img src="img/line asset 2.png" alt="">
+                </div>
+            </div>
+            <div class="city cardp">
+                <div class="text">
+                    <h1 class="global-heading">Открой городскую культуру</h1>
+                    <img src="img/line asset 2.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="reviews">
+        <div class="review-bg-container">
+            <p class="tag">Команда</p>
+            <h1 class="global-heading">Наша команда Tour Guide</h1>
+            <div class="reviews-container">
+                <div class="review-wrapper team-row">
+                    <div class="team-member">
+                        <img src="img/team1.jpeg" alt="Ыкылас" class="team-photo">
+                        <h3 class="team-name">Ыкылас Нурхан</h3>
+                        <p class="team-role">AI-разработчик, архитектура</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="img/team2.jpeg" alt="Дулат" class="team-photo">
+                        <h3 class="team-name">Дулат Оразбак</h3>
+                        <p class="team-role">Backend, база данных</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="img/team3.jpeg" alt="Алмас" class="team-photo">
+                        <h3 class="team-name">Алмас Абикенов</h3>
+                        <p class="team-role">Frontend, UI/UX</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="img/team4.jpg" alt="Саят" class="team-photo">
+                        <h3 class="team-name">Саят Сейдералы</h3>
+                        <p class="team-role">Проект менеджер</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        let position = 0;
+        const slideWidth = document.querySelector('.carousel-slide').offsetWidth + 32; // slide + gap
+        const track = document.getElementById("carouselTrack");
+        const totalSlides = document.querySelectorAll('.carousel-slide').length;
+        const visibleSlides = 4;
+      
+        function moveSlide(direction) {
+          const maxScroll = (totalSlides - visibleSlides) * slideWidth;
+          position += direction * slideWidth;
+          if (position < 0) position = 0;
+          if (position > maxScroll) position = maxScroll;
+          track.style.transform = `translateX(-${position}px)`;
+        }
+      </script>
+      
