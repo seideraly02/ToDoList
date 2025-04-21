@@ -100,12 +100,10 @@
     <section class="promotion">
         <div class="container promotion-container">
           <div class="text-content">
-            <p class="tag"> </p>
             <h1 class="global-heading">Удобный интерфейс приложении</h1>
           </div>
       
-          <div class="carousel" id="customCarousel">
-            <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+          <div class="carousel">
             <div class="carousel-track-container">
               <ul class="carousel-track" id="carouselTrack">
                 <li class="carousel-slide"><img src="img/Destination 1.png" alt="Лондон"></li>
@@ -114,13 +112,18 @@
                 <li class="carousel-slide"><img src="img/Destination 4.png" alt="Берлин"></li>
                 <li class="carousel-slide"><img src="img/Destination 1.png" alt="Копия 1"></li>
                 <li class="carousel-slide"><img src="img/Destination 2.png" alt="Копия 2"></li>
+                <li class="carousel-slide"><img src="img/Destination 2.png" alt="Копия 2"></li>
+                <li class="carousel-slide"><img src="img/Destination 2.png" alt="Копия 2"></li>
+                <li class="carousel-slide"><img src="img/Destination 2.png" alt="Копия 2"></li>
+                <li class="carousel-slide"><img src="img/Destination 2.png" alt="Копия 2"></li>
+                <li class="carousel-slide"><img src="img/Destination 4.png" alt="Берлин"></li>
+                <li class="carousel-slide"><img src="img/Destination 4.png" alt="Берлин"></li>
+
               </ul>
             </div>
-            <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
-          </div>          
-          
+          </div>
         </div>
-      </section>
+      </section>      
     
       
     <section class="promotion-packages">
@@ -139,6 +142,7 @@
             </div>
         </div>
     </section>
+    
     <section class="reviews">
         <div class="review-bg-container">
             <p class="tag">Команда</p>
@@ -169,19 +173,3 @@
             </div>
         </div>
     </section>
-    <script>
-        let position = 0;
-        const slideWidth = document.querySelector('.carousel-slide').offsetWidth + 32; // slide + gap
-        const track = document.getElementById("carouselTrack");
-        const totalSlides = document.querySelectorAll('.carousel-slide').length;
-        const visibleSlides = 4;
-      
-        function moveSlide(direction) {
-          const maxScroll = (totalSlides - visibleSlides) * slideWidth;
-          position += direction * slideWidth;
-          if (position < 0) position = 0;
-          if (position > maxScroll) position = maxScroll;
-          track.style.transform = `translateX(-${position}px)`;
-        }
-      </script>
-      

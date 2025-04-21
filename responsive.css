@@ -21,11 +21,16 @@
 
     .promotion-packages-container {
         flex-direction: column;
-    }
-
-    .cardp {
-        width: 100%;
-    }
+      }
+    
+      .cardp {
+        flex: 1 1 100%;
+        height: 300px;
+      }
+    
+      .cardp h1.global-heading {
+        font-size: 2.4rem;
+      }
 
     .promotion-container::after {
         display: none;
