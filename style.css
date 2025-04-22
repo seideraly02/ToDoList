@@ -398,12 +398,9 @@ section {
 }
 
 .global-heading {
-    flex: 1;
     font-family: "Volkhov", serif;
-    font-weight: 700;
     font-size: 4.8rem;
     color: var(--black-heading);
-
     margin-bottom: 88px;
 
 }
@@ -455,7 +452,6 @@ section {
 .honeymoon-special-container .para,
 .text-content .para {
     color: black;
-    font-weight: 400;
     margin-top: 1.4rem;
     margin-bottom: 2.4rem;
     font-size: 1.6rem;
@@ -584,7 +580,8 @@ section {
 }
 
 .text-content {
-    width: 47%;
+    width: 100%;
+    text-align: center;
 }
 
 .text-content .tag {
@@ -1097,7 +1094,7 @@ section {
 
 .team-photo {
     width: 100%;
-    height: 260px;
+    height: 360px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 15px;
@@ -1173,71 +1170,9 @@ section {
     color: var(--dark-grey);
     line-height: 1.6;
 }
-.carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 6rem;
-    gap: 1rem;
-  }
+
   
-  .carousel-track-container {
-    overflow: hidden;
-    width: 100%;
-    max-width: 1200px;
-    border-radius: 1.2rem;
-  }
-  
-  .carousel-track {
-    display: flex;
-    transition: transform 0.4s ease-in-out;
-    gap: 2rem;
-  }
-  
-  .carousel-slide {
-    min-width: calc((100% - 6rem) / 4); /* 4 слайда с учётом 3 промежутков по 2rem */
-    flex: 0 0 calc((100% - 6rem) / 4);
-    list-style: none;
-  }
-  
-  .carousel-slide img {
-    width: 100%;
-    border-radius: 1.2rem;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .carousel-slide img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  }
-  
-  .carousel-btn {
-    background: white;
-    border: none;
-    font-size: 2.4rem;
-    border-radius: 50%;
-    width: 4.4rem;
-    height: 4.4rem;
-    color: #ff5722;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  
-  .carousel-btn:hover {
-    background-color: #ffeae7;
-  }  
-.modal-overlay {
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
+
 
 .modal-content {
     background: white;
@@ -1278,7 +1213,80 @@ section {
     color: var(--or);
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to   { opacity: 1; transform: scale(1); }
+@keyframes scrollCarousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
+.carousel {
+    position: relative;
+    width: 100%;
+
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform .9s ease-in-out;
+  }
+  
+  .carousel-slide {
+    flex: 0 0 25%;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+  
+  .carousel-slide img {
+    width: 100%;
+    aspect-ratio: 8,5/ 17,5; /* Автоматически рассчитывает высоту */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    object-fit: cover;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+  }
+  
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.8);
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+  }
+  
+  .carousel-btn.prev {
+    left: 10px;
+  }
+  
+  .carousel-btn.next {
+    right: 10px;
+  }
+  
+  .carousel-indicators {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 1.6s ease;
+  }
+  
+  .dot.active {
+    background-color: #717171;
+  }
+  
