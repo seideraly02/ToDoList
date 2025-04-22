@@ -44,7 +44,10 @@ section {
 }
 
 .logo {
-    height: 5.4rem;
+    height: 16rem;
+    display: block;
+    margin-left: 0;
+
 }
 
 .navigation {
