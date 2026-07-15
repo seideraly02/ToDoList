@@ -136,27 +136,32 @@
         <div class="hero-glow hero-glow-right"></div>
         <div class="container hero-grid">
           <div class="hero-copy reveal">
-            <span class="pill">
+            <span class="pill hero-pill">
               <svg class="icon"><use href="#icon-sparkle" /></svg>
-              <span data-i18n="hero.badge">Товары со всего мира</span>
+              <span data-i18n="hero.badge">Закупки · проверка · доставка</span>
             </span>
             <h1>
-              <span data-i18n="hero.titleBefore">Находки, которые</span>
-              <em data-i18n="hero.titleAccent">работают на вас</em>
+              <span data-i18n="hero.titleBefore">Подбираю товары</span>
+              <em data-i18n="hero.titleAccent">без границ</em>
             </h1>
             <p class="hero-text" data-i18n="hero.text">
-              Помогаю покупать проверенные товары из Китая, Турции и Армении — для себя, бизнеса и вдохновения.
+              Китай, Турция, Армения и ювелирные изделия — для личных покупок и бизнеса, с сопровождением до получения.
             </p>
             <div class="hero-buttons">
-              <a class="button button-dark js-whatsapp" href="#" data-whatsapp="groups">
+              <a class="button button-dark js-whatsapp" href="#" data-whatsapp="general">
                 <svg class="icon"><use href="#icon-message" /></svg>
-                <span data-i18n="hero.primary">Получить ссылки на группы</span>
+                <span data-i18n="hero.primary">Подобрать товар</span>
                 <svg class="icon icon-small"><use href="#icon-arrow" /></svg>
               </a>
-              <a class="button button-light" href="https://www.instagram.com/zulfiya.buyer/" target="_blank" rel="noopener noreferrer">
-                <svg class="icon"><use href="#icon-instagram" /></svg>
-                <span data-i18n="hero.secondary">Смотреть Instagram</span>
+              <a class="button button-light" href="#directions">
+                <span data-i18n="hero.secondary">Смотреть направления</span>
+                <svg class="icon icon-small"><use href="#icon-arrow" /></svg>
               </a>
+            </div>
+            <div class="hero-proof" aria-label="Преимущества сервиса">
+              <span><b>✓</b><span data-i18n="hero.proofOne">Для себя и бизнеса</span></span>
+              <span><b>✓</b><span data-i18n="hero.proofTwo">Проверка перед выкупом</span></span>
+              <span><b>✓</b><span data-i18n="hero.proofThree">На связи до получения</span></span>
             </div>
             <dl class="stats">
               <div class="stat-card">
@@ -230,7 +235,8 @@
           </div>
 
           <div class="direction-grid">
-            <article class="direction-card tone-rose reveal">
+            <article class="direction-card tone-rose is-featured reveal">
+              <span class="popular-badge" data-i18n="directions.popular">Популярное направление</span>
               <div class="card-top">
                 <span class="direction-icon"><svg><use href="#icon-package" /></svg></span>
                 <span class="card-number">01</span>
@@ -439,5 +445,10 @@
         </div>
       </div>
     </footer>
+
+    <a class="floating-whatsapp js-whatsapp" href="#" data-whatsapp="general">
+      <svg class="icon"><use href="#icon-message" /></svg>
+      <span data-i18n="hero.primary">Подобрать товар</span>
+    </a>
   </body>
 </html>
