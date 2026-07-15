@@ -18,7 +18,7 @@ const translations = {
     'hero.proofOne': 'Для себя и бизнеса', 'hero.proofTwo': 'Проверка перед выкупом', 'hero.proofThree': 'На связи до получения',
     'ticker.china': 'Китай', 'ticker.turkey': 'Турция', 'ticker.armenia': 'Армения', 'ticker.jewelry': 'Украшения', 'ticker.wholesale': 'Опт', 'ticker.retail': 'Розница',
     'directions.kicker': 'Что можно заказать', 'directions.title': 'Четыре направления — один надёжный контакт',
-    'directions.intro': 'Выберите нужное направление и получите доступ к актуальным товарам, новинкам и условиям заказа.', 'directions.action': 'Получить подборку', 'directions.popular': 'Популярное направление',
+    'directions.intro': 'Выберите нужное направление и получите доступ к актуальным товарам, новинкам и условиям заказа.', 'directions.action': 'Получить подборку', 'directions.popular': 'Популярное направление', 'directions.swipe': 'Листайте направления →',
     'directions.china.title': 'Товары из Китая', 'directions.china.text': 'Широкий выбор товаров для дома, бизнеса, красоты и повседневной жизни.', 'directions.china.group': 'WhatsApp-группа Китай',
     'directions.turkey.title': 'Товары из Турции', 'directions.turkey.text': 'Одежда, текстиль и товары для тех, кто ценит качество и актуальный стиль.', 'directions.turkey.group': 'WhatsApp-группа Турция',
     'directions.armenia.title': 'Товары из Армении', 'directions.armenia.text': 'Особенные находки из Еревана для личных покупок и вашего ассортимента.', 'directions.armenia.group': 'WhatsApp-группа Армения',
@@ -56,7 +56,7 @@ const translations = {
     'hero.proofOne': 'Өзіңізге және бизнеске', 'hero.proofTwo': 'Сатып алар алдында тексеру', 'hero.proofThree': 'Алғанға дейін байланыстамын',
     'ticker.china': 'Қытай', 'ticker.turkey': 'Түркия', 'ticker.armenia': 'Армения', 'ticker.jewelry': 'Әшекейлер', 'ticker.wholesale': 'Көтерме', 'ticker.retail': 'Бөлшек',
     'directions.kicker': 'Не тапсырыс беруге болады', 'directions.title': 'Төрт бағыт — бір сенімді байланыс',
-    'directions.intro': 'Қажетті бағытты таңдап, өзекті тауарлар, жаңалықтар мен тапсырыс шарттарына қол жеткізіңіз.', 'directions.action': 'Таңдауды алу', 'directions.popular': 'Танымал бағыт',
+    'directions.intro': 'Қажетті бағытты таңдап, өзекті тауарлар, жаңалықтар мен тапсырыс шарттарына қол жеткізіңіз.', 'directions.action': 'Таңдауды алу', 'directions.popular': 'Танымал бағыт', 'directions.swipe': 'Бағыттарды сырғытыңыз →',
     'directions.china.title': 'Қытай тауарлары', 'directions.china.text': 'Үйге, бизнеске, сұлулық пен күнделікті өмірге арналған кең таңдау.', 'directions.china.group': 'Қытай WhatsApp тобы',
     'directions.turkey.title': 'Түркия тауарлары', 'directions.turkey.text': 'Сапа мен заманауи стильді бағалайтындарға арналған киім және тоқыма.', 'directions.turkey.group': 'Түркия WhatsApp тобы',
     'directions.armenia.title': 'Армения тауарлары', 'directions.armenia.text': 'Жеке сатып алуға және ассортиментке арналған Ереванның ерекше тауарлары.', 'directions.armenia.group': 'Армения WhatsApp тобы',
@@ -106,7 +106,19 @@ const messages = {
 const header = document.querySelector('[data-header]')
 const menuButton = document.querySelector('.menu-button')
 const mobileMenu = document.querySelector('#mobile-menu')
+const hero = document.querySelector('.hero')
+const heroArt = document.querySelector('.hero-art')
+const progressBar = document.querySelector('.scroll-progress span')
+const floatingWhatsApp = document.querySelector('.floating-whatsapp')
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+const supportsPrecisePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches
+const lowEndDevice =
+  (navigator.deviceMemory !== undefined && navigator.deviceMemory <= 2) ||
+  (navigator.deviceMemory === undefined && navigator.hardwareConcurrency !== undefined && navigator.hardwareConcurrency <= 4)
+const richMotion = !reducedMotion && !lowEndDevice
 let locale = localStorage.getItem('zulfiya-locale') === 'kk' ? 'kk' : 'ru'
+
+if (lowEndDevice) document.documentElement.classList.add('motion-lite')
 
 function updateWhatsAppLinks() {
   document.querySelectorAll('[data-whatsapp]').forEach((link) => {
@@ -154,7 +166,78 @@ document.querySelectorAll('[data-locale]').forEach((button) => button.addEventLi
 document.querySelectorAll('a[href*="instagram.com"]').forEach((link) => { link.href = INSTAGRAM })
 document.querySelectorAll('[data-year]').forEach((element) => { element.textContent = new Date().getFullYear() })
 
-window.addEventListener('scroll', () => header.classList.toggle('is-scrolled', window.scrollY > 8), { passive: true })
+let scrollFrame = 0
+
+function updateScrollEffects() {
+  const scrollTop = window.scrollY
+  const scrollRange = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1)
+  header.classList.toggle('is-scrolled', scrollTop > 8)
+  progressBar.style.transform = `scaleX(${Math.min(scrollTop / scrollRange, 1)})`
+  if (floatingWhatsApp && hero) {
+    floatingWhatsApp.classList.toggle('is-shown', scrollTop > hero.offsetTop + hero.offsetHeight * 0.62)
+  }
+
+  if (richMotion && heroArt) {
+    const offset = Math.min(scrollTop * 0.035, 24)
+    heroArt.style.setProperty('--hero-scroll', `${offset}px`)
+    heroArt.style.setProperty('--delivery-scroll', `${offset * -0.42}px`)
+  }
+
+  scrollFrame = 0
+}
+
+window.addEventListener('scroll', () => {
+  if (!scrollFrame) scrollFrame = window.requestAnimationFrame(updateScrollEffects)
+}, { passive: true })
+
+updateScrollEffects()
+
+if (richMotion && supportsPrecisePointer && hero && heroArt) {
+  let pointerFrame = 0
+  let pointerEvent
+
+  hero.addEventListener('pointermove', (event) => {
+    pointerEvent = event
+    if (pointerFrame) return
+
+    pointerFrame = window.requestAnimationFrame(() => {
+      const rect = hero.getBoundingClientRect()
+      const x = (pointerEvent.clientX - rect.left) / rect.width - 0.5
+      const y = (pointerEvent.clientY - rect.top) / rect.height - 0.5
+      heroArt.style.setProperty('--market-x', `${x * 11}px`)
+      heroArt.style.setProperty('--market-y', `${y * 8}px`)
+      heroArt.style.setProperty('--delivery-x', `${x * -8}px`)
+      heroArt.style.setProperty('--delivery-y', `${y * -6}px`)
+      pointerFrame = 0
+    })
+  })
+
+  hero.addEventListener('pointerleave', () => {
+    heroArt.style.setProperty('--market-x', '0px')
+    heroArt.style.setProperty('--market-y', '0px')
+    heroArt.style.setProperty('--delivery-x', '0px')
+    heroArt.style.setProperty('--delivery-y', '0px')
+  })
+
+  document.querySelectorAll('.direction-card').forEach((card) => {
+    card.addEventListener('pointermove', (event) => {
+      const rect = card.getBoundingClientRect()
+      const x = (event.clientX - rect.left) / rect.width
+      const y = (event.clientY - rect.top) / rect.height
+      card.style.setProperty('--card-rx', `${(0.5 - y) * 3.5}deg`)
+      card.style.setProperty('--card-ry', `${(x - 0.5) * 4.5}deg`)
+      card.style.setProperty('--glare-x', `${x * 100}%`)
+      card.style.setProperty('--glare-y', `${y * 100}%`)
+    })
+
+    card.addEventListener('pointerleave', () => {
+      card.style.setProperty('--card-rx', '0deg')
+      card.style.setProperty('--card-ry', '0deg')
+      card.style.setProperty('--glare-x', '50%')
+      card.style.setProperty('--glare-y', '50%')
+    })
+  })
+}
 
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver((entries) => {
@@ -170,4 +253,45 @@ if ('IntersectionObserver' in window) {
   document.querySelectorAll('.reveal').forEach((element) => element.classList.add('is-visible'))
 }
 
+function animateCounter(element) {
+  if (element.dataset.counted === 'true') return
+  element.dataset.counted = 'true'
+
+  const target = Number(element.dataset.count)
+  const suffix = element.dataset.suffix || ''
+
+  if (!richMotion) {
+    element.textContent = `${target}${suffix}`
+    return
+  }
+
+  const duration = 900
+  const startedAt = performance.now()
+
+  function tick(now) {
+    const progress = Math.min((now - startedAt) / duration, 1)
+    const eased = 1 - Math.pow(1 - progress, 3)
+    element.textContent = `${Math.round(target * eased)}${suffix}`
+    if (progress < 1) window.requestAnimationFrame(tick)
+  }
+
+  window.requestAnimationFrame(tick)
+}
+
+const counters = document.querySelectorAll('[data-count]')
+if ('IntersectionObserver' in window) {
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return
+      animateCounter(entry.target)
+      counterObserver.unobserve(entry.target)
+    })
+  }, { threshold: 0.7 })
+
+  counters.forEach((counter) => counterObserver.observe(counter))
+} else {
+  counters.forEach(animateCounter)
+}
+
 setLocale(locale)
+window.requestAnimationFrame(() => document.body.classList.add('is-loaded'))

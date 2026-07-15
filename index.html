@@ -128,6 +128,7 @@
           </a>
         </nav>
       </div>
+      <div class="scroll-progress" aria-hidden="true"><span></span></div>
     </header>
 
     <main id="main">
@@ -135,7 +136,7 @@
         <div class="hero-glow hero-glow-left"></div>
         <div class="hero-glow hero-glow-right"></div>
         <div class="container hero-grid">
-          <div class="hero-copy reveal">
+          <div class="hero-copy">
             <span class="pill hero-pill">
               <svg class="icon"><use href="#icon-sparkle" /></svg>
               <span data-i18n="hero.badge">Закупки · проверка · доставка</span>
@@ -165,11 +166,11 @@
             </div>
             <dl class="stats">
               <div class="stat-card">
-                <dt>12K+</dt>
+                <dt data-count="12" data-suffix="K+">12K+</dt>
                 <dd data-i18n="hero.statFollowers">подписчиков</dd>
               </div>
               <div class="stat-card">
-                <dt>4</dt>
+                <dt data-count="4">4</dt>
                 <dd data-i18n="hero.statYears">года в закупках</dd>
               </div>
               <div class="stat-card">
@@ -179,7 +180,7 @@
             </dl>
           </div>
 
-          <div class="hero-art reveal reveal-delay" aria-hidden="true">
+          <div class="hero-art" aria-hidden="true">
             <div class="market-card">
               <span class="noise"></span>
               <small>Zulfiya Buyer</small>
@@ -234,6 +235,7 @@
             </p>
           </div>
 
+          <p class="mobile-swipe-hint" data-i18n="directions.swipe">Листайте направления</p>
           <div class="direction-grid">
             <article class="direction-card tone-rose is-featured reveal">
               <span class="popular-badge" data-i18n="directions.popular">Популярное направление</span>
