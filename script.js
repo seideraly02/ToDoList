@@ -351,7 +351,7 @@ function initInfiniteCarousel(scroller) {
     if (scroller.scrollLeft < state.cycleStart) scroller.scrollLeft += state.cycleWidth
   }
 
-  function queueAutoplay(delay = 2600) {
+  function queueAutoplay(delay = 5600) {
     window.clearTimeout(state.autoplayTimer)
     state.autoplayTimer = window.setTimeout(() => {
       if (!state.userPaused && !state.interacting && !document.hidden) {
@@ -363,7 +363,7 @@ function initInfiniteCarousel(scroller) {
             : closest
         ), 0)
         const nextCard = cards[currentIndex + 1] || originals[0]
-        scroller.scrollTo({ left: nextCard.offsetLeft, behavior: 'smooth' })
+        scroller.scrollTo({ left: nextCard.offsetLeft, behavior: reducedMotion ? 'auto' : 'smooth' })
       }
       queueAutoplay()
     }, delay)
@@ -379,13 +379,16 @@ function initInfiniteCarousel(scroller) {
   }
   state.onPointerUp = () => {
     state.interacting = false
-    queueAutoplay(1800)
+    queueAutoplay(3200)
   }
-  state.onFocusIn = () => queueAutoplay(3000)
+  state.onFocusIn = () => queueAutoplay(5600)
   state.onToggle = () => {
     state.userPaused = !state.userPaused
-    if (state.userPaused) window.clearTimeout(state.autoplayTimer)
-    else queueAutoplay(300)
+    if (state.userPaused) {
+      window.clearTimeout(state.autoplayTimer)
+    } else {
+      queueAutoplay(800)
+    }
     updateCarouselLabels()
   }
 
@@ -399,7 +402,7 @@ function initInfiniteCarousel(scroller) {
   state.cycleStart = originals[0].offsetLeft
   state.cycleWidth = after[0].offsetLeft - state.cycleStart
   scroller.scrollLeft = state.cycleStart
-  queueAutoplay(900)
+  queueAutoplay(3600)
   updateCarouselLabels()
 }
 
