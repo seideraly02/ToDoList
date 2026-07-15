@@ -299,7 +299,7 @@ const mobileCarouselQuery = window.matchMedia('(max-width: 600px)')
 
 function updateCarouselLabels() {
   carouselStates.forEach((state) => {
-    const paused = state.userPaused || reducedMotion
+    const paused = state.userPaused
     state.button.classList.toggle('is-paused', paused)
     state.button.setAttribute('aria-pressed', String(paused))
     state.button.setAttribute(
@@ -337,9 +337,8 @@ function initInfiniteCarousel(scroller) {
     button,
     originals,
     clones: [...before, ...after],
-    frame: 0,
-    lastTime: performance.now(),
-    pauseUntil: 0,
+    autoplayTimer: 0,
+    normalizeTimer: 0,
     interacting: false,
     userPaused: reducedMotion,
     cycleStart: 0,
@@ -352,41 +351,64 @@ function initInfiniteCarousel(scroller) {
     if (scroller.scrollLeft < state.cycleStart) scroller.scrollLeft += state.cycleWidth
   }
 
-  function animate(now) {
-    normalize()
-    if (!state.userPaused && !state.interacting && !document.hidden && now > state.pauseUntil) {
-      const elapsed = Math.min(now - state.lastTime, 34)
-      scroller.scrollLeft += elapsed * 0.026
-      normalize()
-    }
-    state.lastTime = now
-    state.frame = window.requestAnimationFrame(animate)
+  function queueAutoplay(delay = 2600) {
+    window.clearTimeout(state.autoplayTimer)
+    state.autoplayTimer = window.setTimeout(() => {
+      if (!state.userPaused && !state.interacting && !document.hidden) {
+        normalize()
+        const cards = Array.from(scroller.children)
+        const currentIndex = cards.reduce((closest, card, index) => (
+          Math.abs(card.offsetLeft - scroller.scrollLeft) < Math.abs(cards[closest].offsetLeft - scroller.scrollLeft)
+            ? index
+            : closest
+        ), 0)
+        const nextCard = cards[currentIndex + 1] || originals[0]
+        scroller.scrollTo({ left: nextCard.offsetLeft, behavior: 'smooth' })
+      }
+      queueAutoplay()
+    }, delay)
   }
 
-  state.onPointerDown = () => { state.interacting = true }
-  state.onPointerUp = () => { state.interacting = false; state.pauseUntil = performance.now() + 1600 }
-  state.onFocusIn = () => { state.pauseUntil = performance.now() + 3000 }
-  state.onToggle = () => { state.userPaused = !state.userPaused; updateCarouselLabels() }
+  state.onScroll = () => {
+    window.clearTimeout(state.normalizeTimer)
+    state.normalizeTimer = window.setTimeout(normalize, 180)
+  }
+  state.onPointerDown = () => {
+    state.interacting = true
+    window.clearTimeout(state.autoplayTimer)
+  }
+  state.onPointerUp = () => {
+    state.interacting = false
+    queueAutoplay(1800)
+  }
+  state.onFocusIn = () => queueAutoplay(3000)
+  state.onToggle = () => {
+    state.userPaused = !state.userPaused
+    if (state.userPaused) window.clearTimeout(state.autoplayTimer)
+    else queueAutoplay(300)
+    updateCarouselLabels()
+  }
 
+  scroller.addEventListener('scroll', state.onScroll, { passive: true })
   scroller.addEventListener('pointerdown', state.onPointerDown, { passive: true })
   window.addEventListener('pointerup', state.onPointerUp, { passive: true })
   scroller.addEventListener('focusin', state.onFocusIn)
   button.addEventListener('click', state.onToggle)
   carouselStates.set(scroller, state)
 
-  window.requestAnimationFrame(() => {
-    state.cycleStart = originals[0].offsetLeft
-    state.cycleWidth = after[0].offsetLeft - state.cycleStart
-    scroller.scrollLeft = state.cycleStart
-    state.frame = window.requestAnimationFrame(animate)
-    updateCarouselLabels()
-  })
+  state.cycleStart = originals[0].offsetLeft
+  state.cycleWidth = after[0].offsetLeft - state.cycleStart
+  scroller.scrollLeft = state.cycleStart
+  queueAutoplay(900)
+  updateCarouselLabels()
 }
 
 function destroyInfiniteCarousel(scroller) {
   const state = carouselStates.get(scroller)
   if (!state) return
-  window.cancelAnimationFrame(state.frame)
+  window.clearTimeout(state.autoplayTimer)
+  window.clearTimeout(state.normalizeTimer)
+  scroller.removeEventListener('scroll', state.onScroll)
   scroller.removeEventListener('pointerdown', state.onPointerDown)
   window.removeEventListener('pointerup', state.onPointerUp)
   scroller.removeEventListener('focusin', state.onFocusIn)
