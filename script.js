@@ -326,6 +326,7 @@ function initInfiniteCarousel(scroller) {
   if (carouselStates.has(scroller) || scroller.children.length < 2) return
 
   const originals = Array.from(scroller.children)
+  originals.forEach((card) => card.classList.add('is-visible'))
   const before = originals.map(createCarouselClone)
   const after = originals.map(createCarouselClone)
   scroller.prepend(...before)
@@ -339,6 +340,8 @@ function initInfiniteCarousel(scroller) {
     clones: [...before, ...after],
     autoplayTimer: 0,
     normalizeTimer: 0,
+    scrollTimer: 0,
+    isAnimating: false,
     interacting: false,
     userPaused: reducedMotion,
     cycleStart: 0,
@@ -349,6 +352,47 @@ function initInfiniteCarousel(scroller) {
     if (!state.cycleWidth) return
     if (scroller.scrollLeft >= state.cycleStart + state.cycleWidth) scroller.scrollLeft -= state.cycleWidth
     if (scroller.scrollLeft < state.cycleStart) scroller.scrollLeft += state.cycleWidth
+  }
+
+  function stopScrollAnimation() {
+    window.clearTimeout(state.scrollTimer)
+    state.scrollTimer = 0
+    state.isAnimating = false
+  }
+
+  function animateScrollTo(targetLeft) {
+    stopScrollAnimation()
+
+    const startLeft = scroller.scrollLeft
+    const distance = targetLeft - startLeft
+    if (reducedMotion || Math.abs(distance) < 1) {
+      scroller.scrollLeft = targetLeft
+      normalize()
+      return
+    }
+
+    const duration = lowEndDevice ? 950 : 1600
+    const frameDelay = lowEndDevice ? 24 : 16
+    const startedAt = performance.now()
+    state.isAnimating = true
+
+    function step() {
+      if (!state.isAnimating) return
+
+      const progress = Math.min((performance.now() - startedAt) / duration, 1)
+      const eased = progress * progress * progress * (progress * ((progress * 6) - 15) + 10)
+      scroller.scrollLeft = startLeft + (distance * eased)
+
+      if (progress < 1) {
+        state.scrollTimer = window.setTimeout(step, frameDelay)
+      } else {
+        stopScrollAnimation()
+        scroller.scrollLeft = targetLeft
+        normalize()
+      }
+    }
+
+    state.scrollTimer = window.setTimeout(step, frameDelay)
   }
 
   function queueAutoplay(delay = 5600) {
@@ -363,7 +407,7 @@ function initInfiniteCarousel(scroller) {
             : closest
         ), 0)
         const nextCard = cards[currentIndex + 1] || originals[0]
-        scroller.scrollTo({ left: nextCard.offsetLeft, behavior: reducedMotion ? 'auto' : 'smooth' })
+        animateScrollTo(nextCard.offsetLeft)
       }
       queueAutoplay()
     }, delay)
@@ -376,6 +420,7 @@ function initInfiniteCarousel(scroller) {
   state.onPointerDown = () => {
     state.interacting = true
     window.clearTimeout(state.autoplayTimer)
+    stopScrollAnimation()
   }
   state.onPointerUp = () => {
     state.interacting = false
@@ -386,6 +431,7 @@ function initInfiniteCarousel(scroller) {
     state.userPaused = !state.userPaused
     if (state.userPaused) {
       window.clearTimeout(state.autoplayTimer)
+      stopScrollAnimation()
     } else {
       queueAutoplay(800)
     }
@@ -411,6 +457,7 @@ function destroyInfiniteCarousel(scroller) {
   if (!state) return
   window.clearTimeout(state.autoplayTimer)
   window.clearTimeout(state.normalizeTimer)
+  window.clearTimeout(state.scrollTimer)
   scroller.removeEventListener('scroll', state.onScroll)
   scroller.removeEventListener('pointerdown', state.onPointerDown)
   window.removeEventListener('pointerup', state.onPointerUp)
