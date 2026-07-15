@@ -2,15 +2,442 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f1e8" />
     <meta
       name="description"
-      content="Zulfiya Buyer — товары из Китая, Турции и Армении оптом и в розницу."
+      content="Zulfiya Buyer — проверенные товары из Китая, Турции и Армении оптом и в розницу."
     />
-    <title>Zulfiya Buyer</title>
+    <meta property="og:title" content="Zulfiya Buyer" />
+    <meta
+      property="og:description"
+      content="Покупки за рубежом — понятно, спокойно и с сопровождением."
+    />
+    <meta property="og:type" content="website" />
+    <title>Zulfiya Buyer — товары без границ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <a class="skip-link" href="#main" data-i18n="a11y.skip">Перейти к содержимому</a>
+
+    <svg class="svg-sprite" aria-hidden="true">
+      <symbol id="icon-arrow" viewBox="0 0 24 24">
+        <path d="M7 17 17 7M7 7h10v10" />
+      </symbol>
+      <symbol id="icon-message" viewBox="0 0 24 24">
+        <path d="M21 11.5a8.4 8.4 0 0 1-9 8.5 9.2 9.2 0 0 1-3.8-.8L3 21l1.7-5a8.3 8.3 0 0 1-1.2-4.4 8.4 8.4 0 0 1 9-8.5 8.4 8.4 0 0 1 8.5 8.4Z" />
+      </symbol>
+      <symbol id="icon-instagram" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="18" height="18" rx="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="17.5" cy="6.5" r=".8" class="fill-icon" />
+      </symbol>
+      <symbol id="icon-menu" viewBox="0 0 24 24">
+        <path d="M4 7h16M4 12h16M4 17h16" />
+      </symbol>
+      <symbol id="icon-close" viewBox="0 0 24 24">
+        <path d="m6 6 12 12M18 6 6 18" />
+      </symbol>
+      <symbol id="icon-sparkle" viewBox="0 0 24 24">
+        <path d="m12 3 1.4 4.6L18 9l-4.6 1.4L12 15l-1.4-4.6L6 9l4.6-1.4L12 3ZM19 15l.7 2.3L22 18l-2.3.7L19 21l-.7-2.3L16 18l2.3-.7L19 15Z" />
+      </symbol>
+      <symbol id="icon-package" viewBox="0 0 24 24">
+        <path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z" />
+        <path d="m4.5 7.8 7.5 4.3 7.5-4.3M12 12v9" />
+      </symbol>
+      <symbol id="icon-shirt" viewBox="0 0 24 24">
+        <path d="M8.5 4 4 6l-2 5 4 1.5V21h12v-8.5l4-1.5-2-5-4.5-2A4 4 0 0 1 12 6a4 4 0 0 1-3.5-2Z" />
+      </symbol>
+      <symbol id="icon-briefcase" viewBox="0 0 24 24">
+        <rect x="3" y="7" width="18" height="13" rx="2" />
+        <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18M10 12v2h4v-2" />
+      </symbol>
+      <symbol id="icon-diamond" viewBox="0 0 24 24">
+        <path d="m3 9 4-5h10l4 5-9 12L3 9Z" />
+        <path d="m7 4 5 17 5-17M3 9h18" />
+      </symbol>
+      <symbol id="icon-globe" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18" />
+      </symbol>
+      <symbol id="icon-search" viewBox="0 0 24 24">
+        <circle cx="10.5" cy="10.5" r="6.5" />
+        <path d="m15.5 15.5 5 5M8 10.5l1.6 1.6L13 8.7" />
+      </symbol>
+      <symbol id="icon-shield" viewBox="0 0 24 24">
+        <path d="M12 3 20 6v5c0 5.2-3.4 8.4-8 10-4.6-1.6-8-4.8-8-10V6l8-3Z" />
+        <path d="m8.5 12 2.2 2.2 4.8-5" />
+      </symbol>
+      <symbol id="icon-heart" viewBox="0 0 24 24">
+        <path d="M20.8 5.8a5.4 5.4 0 0 0-7.6 0L12 7l-1.2-1.2a5.4 5.4 0 1 0-7.6 7.6L12 22l8.8-8.6a5.4 5.4 0 0 0 0-7.6Z" />
+      </symbol>
+      <symbol id="icon-phone" viewBox="0 0 24 24">
+        <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 1.9Z" />
+      </symbol>
+    </svg>
+
+    <header class="site-header" data-header>
+      <div class="container header-inner">
+        <a class="brand" href="#top" aria-label="Zulfiya Buyer — на главную">
+          <span class="brand-mark">Z</span>
+          <span>
+            <strong>Zulfiya Buyer</strong>
+            <small data-i18n="meta.descriptor">Байер и проводник по мировым рынкам</small>
+          </span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Главная навигация">
+          <a href="#directions" data-i18n="nav.directions">Направления</a>
+          <a href="#about" data-i18n="nav.about">Обо мне</a>
+          <a href="#process" data-i18n="nav.process">Как заказать</a>
+          <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="locale-switch" role="group" aria-label="Выбор языка">
+            <button class="locale-button is-active" type="button" data-locale="ru" aria-pressed="true">RU</button>
+            <button class="locale-button" type="button" data-locale="kk" aria-pressed="false">KZ</button>
+          </div>
+          <a class="header-cta js-whatsapp" href="#" data-whatsapp="general">
+            <span data-i18n="nav.write">Написать</span>
+            <svg class="icon"><use href="#icon-arrow" /></svg>
+          </a>
+          <button class="menu-button" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
+            <svg class="icon menu-open"><use href="#icon-menu" /></svg>
+            <svg class="icon menu-close"><use href="#icon-close" /></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <nav class="container mobile-nav" aria-label="Мобильная навигация">
+          <a href="#directions" data-i18n="nav.directions">Направления</a>
+          <a href="#about" data-i18n="nav.about">Обо мне</a>
+          <a href="#process" data-i18n="nav.process">Как заказать</a>
+          <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
+          <a class="button button-dark js-whatsapp" href="#" data-whatsapp="general">
+            <svg class="icon"><use href="#icon-message" /></svg>
+            <span data-i18n="contacts.whatsapp">Написать в WhatsApp</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-glow hero-glow-left"></div>
+        <div class="hero-glow hero-glow-right"></div>
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <span class="pill">
+              <svg class="icon"><use href="#icon-sparkle" /></svg>
+              <span data-i18n="hero.badge">Товары со всего мира</span>
+            </span>
+            <h1>
+              <span data-i18n="hero.titleBefore">Находки, которые</span>
+              <em data-i18n="hero.titleAccent">работают на вас</em>
+            </h1>
+            <p class="hero-text" data-i18n="hero.text">
+              Помогаю покупать проверенные товары из Китая, Турции и Армении — для себя, бизнеса и вдохновения.
+            </p>
+            <div class="hero-buttons">
+              <a class="button button-dark js-whatsapp" href="#" data-whatsapp="groups">
+                <svg class="icon"><use href="#icon-message" /></svg>
+                <span data-i18n="hero.primary">Получить ссылки на группы</span>
+                <svg class="icon icon-small"><use href="#icon-arrow" /></svg>
+              </a>
+              <a class="button button-light" href="https://www.instagram.com/zulfiya.buyer/" target="_blank" rel="noopener noreferrer">
+                <svg class="icon"><use href="#icon-instagram" /></svg>
+                <span data-i18n="hero.secondary">Смотреть Instagram</span>
+              </a>
+            </div>
+            <dl class="stats">
+              <div class="stat-card">
+                <dt>12K+</dt>
+                <dd data-i18n="hero.statFollowers">подписчиков</dd>
+              </div>
+              <div class="stat-card">
+                <dt>4</dt>
+                <dd data-i18n="hero.statYears">года в закупках</dd>
+              </div>
+              <div class="stat-card">
+                <dt class="stat-small">B2B<br />B2C</dt>
+                <dd data-i18n="hero.statFormats">опт и розница</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="hero-art reveal reveal-delay" aria-hidden="true">
+            <div class="market-card">
+              <span class="noise"></span>
+              <small>Zulfiya Buyer</small>
+              <svg class="market-diamond"><use href="#icon-diamond" /></svg>
+              <p>China <i>·</i> Türkiye <i>·</i> Armenia</p>
+              <span class="market-tag">
+                <svg class="icon"><use href="#icon-package" /></svg>
+                Wholesale / Retail
+              </span>
+            </div>
+            <div class="delivery-card">
+              <div class="delivery-icon"><svg class="icon"><use href="#icon-package" /></svg></div>
+              <strong data-i18n="hero.noteTitle">От идеи до доставки</strong>
+              <p data-i18n="hero.noteText">Подберу товар, проверю детали и помогу провести заказ до получения.</p>
+            </div>
+            <div class="floating-sparkle"><svg><use href="#icon-sparkle" /></svg></div>
+            <div class="posts-card"><strong>546+</strong><span>Instagram posts</span></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="ticker" aria-label="Направления работы">
+        <div class="ticker-track">
+          <div class="ticker-group">
+            <span data-i18n="ticker.china">Китай</span><b>✦</b>
+            <span data-i18n="ticker.turkey">Турция</span><b>✦</b>
+            <span data-i18n="ticker.armenia">Армения</span><b>✦</b>
+            <span data-i18n="ticker.jewelry">Украшения</span><b>✦</b>
+            <span data-i18n="ticker.wholesale">Опт</span><b>✦</b>
+            <span data-i18n="ticker.retail">Розница</span><b>✦</b>
+          </div>
+          <div class="ticker-group" aria-hidden="true">
+            <span data-i18n="ticker.china">Китай</span><b>✦</b>
+            <span data-i18n="ticker.turkey">Турция</span><b>✦</b>
+            <span data-i18n="ticker.armenia">Армения</span><b>✦</b>
+            <span data-i18n="ticker.jewelry">Украшения</span><b>✦</b>
+            <span data-i18n="ticker.wholesale">Опт</span><b>✦</b>
+            <span data-i18n="ticker.retail">Розница</span><b>✦</b>
+          </div>
+        </div>
+      </div>
+
+      <section class="section directions" id="directions">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <p class="eyebrow" data-i18n="directions.kicker">Что можно заказать</p>
+              <h2 data-i18n="directions.title">Четыре направления — один надёжный контакт</h2>
+            </div>
+            <p class="section-intro" data-i18n="directions.intro">
+              Выберите нужное направление и получите доступ к актуальным товарам, новинкам и условиям заказа.
+            </p>
+          </div>
+
+          <div class="direction-grid">
+            <article class="direction-card tone-rose reveal">
+              <div class="card-top">
+                <span class="direction-icon"><svg><use href="#icon-package" /></svg></span>
+                <span class="card-number">01</span>
+              </div>
+              <h3 data-i18n="directions.china.title">Товары из Китая</h3>
+              <p data-i18n="directions.china.text">Широкий выбор товаров для дома, бизнеса, красоты и повседневной жизни.</p>
+              <a class="card-link js-whatsapp" href="#" data-whatsapp="china">
+                <span data-i18n="directions.action">Получить ссылку</span>
+                <svg class="icon"><use href="#icon-arrow" /></svg>
+              </a>
+              <small data-i18n="directions.china.group">WhatsApp-группа Китай</small>
+            </article>
+
+            <article class="direction-card tone-blue reveal reveal-delay-1">
+              <div class="card-top">
+                <span class="direction-icon"><svg><use href="#icon-shirt" /></svg></span>
+                <span class="card-number">02</span>
+              </div>
+              <h3 data-i18n="directions.turkey.title">Товары из Турции</h3>
+              <p data-i18n="directions.turkey.text">Одежда, текстиль и товары для тех, кто ценит качество и актуальный стиль.</p>
+              <a class="card-link js-whatsapp" href="#" data-whatsapp="turkey">
+                <span data-i18n="directions.action">Получить ссылку</span>
+                <svg class="icon"><use href="#icon-arrow" /></svg>
+              </a>
+              <small data-i18n="directions.turkey.group">WhatsApp-группа Турция</small>
+            </article>
+
+            <article class="direction-card tone-sand reveal reveal-delay-2">
+              <div class="card-top">
+                <span class="direction-icon"><svg><use href="#icon-briefcase" /></svg></span>
+                <span class="card-number">03</span>
+              </div>
+              <h3 data-i18n="directions.armenia.title">Товары из Армении</h3>
+              <p data-i18n="directions.armenia.text">Особенные находки из Еревана для личных покупок и вашего ассортимента.</p>
+              <a class="card-link js-whatsapp" href="#" data-whatsapp="armenia">
+                <span data-i18n="directions.action">Получить ссылку</span>
+                <svg class="icon"><use href="#icon-arrow" /></svg>
+              </a>
+              <small data-i18n="directions.armenia.group">WhatsApp-группа Армения</small>
+            </article>
+
+            <article class="direction-card tone-plum reveal reveal-delay-3">
+              <div class="card-top">
+                <span class="direction-icon"><svg><use href="#icon-diamond" /></svg></span>
+                <span class="card-number">04</span>
+              </div>
+              <h3 data-i18n="directions.jewelry.title">Золото и бриллианты</h3>
+              <p data-i18n="directions.jewelry.text">Украшения с натуральными камнями и вниманием к каждой детали.</p>
+              <a class="card-link js-whatsapp" href="#" data-whatsapp="jewelry">
+                <span data-i18n="directions.action">Получить ссылку</span>
+                <svg class="icon"><use href="#icon-arrow" /></svg>
+              </a>
+              <small data-i18n="directions.jewelry.group">WhatsApp-группа украшения</small>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section about" id="about">
+        <div class="about-orbit orbit-one"></div>
+        <div class="about-orbit orbit-two"></div>
+        <div class="container about-grid">
+          <div class="about-art reveal" aria-hidden="true">
+            <span class="about-label">ZU / BUYER</span>
+            <svg class="about-diamond"><use href="#icon-diamond" /></svg>
+            <div class="about-stamp"><span>4</span><small>YEARS<br />IN MARKET</small></div>
+            <p>Curated with care.<br />Delivered with confidence.</p>
+          </div>
+          <div class="about-copy reveal reveal-delay">
+            <p class="eyebrow eyebrow-light" data-i18n="about.kicker">Обо мне</p>
+            <h2 data-i18n="about.title">Ваш человек по ту сторону витрины</h2>
+            <p class="about-text" data-i18n="about.text">
+              Я Зульфия — байер, который превращает поиск товаров за рубежом в понятный и спокойный процесс. Знаю рынки, слежу за трендами и ценю долгосрочное доверие.
+            </p>
+            <dl class="about-facts">
+              <div><dt data-i18n="about.factOne">12K+</dt><dd data-i18n="about.factOneLabel">человек в сообществе</dd></div>
+              <div><dt data-i18n="about.factTwo">4</dt><dd data-i18n="about.factTwoLabel">направления закупок</dd></div>
+              <div><dt class="fact-wide" data-i18n="about.factThree">B2B / B2C</dt><dd data-i18n="about.factThreeLabel">работаю с бизнесом и частными клиентами</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="section benefits">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <p class="eyebrow" data-i18n="benefits.kicker">Почему со мной удобно</p>
+              <h2 data-i18n="benefits.title">Покупка без лишней неопределённости</h2>
+            </div>
+          </div>
+          <div class="benefit-grid">
+            <article class="benefit-card reveal">
+              <span><svg><use href="#icon-globe" /></svg></span>
+              <h3 data-i18n="benefits.market.title">Доступ к рынкам</h3>
+              <p data-i18n="benefits.market.text">Актуальные предложения из разных стран в одном месте.</p>
+            </article>
+            <article class="benefit-card reveal reveal-delay-1">
+              <span><svg><use href="#icon-search" /></svg></span>
+              <h3 data-i18n="benefits.choice.title">Осознанный выбор</h3>
+              <p data-i18n="benefits.choice.text">Помогаю сравнить варианты и подобрать товар под задачу и бюджет.</p>
+            </article>
+            <article class="benefit-card reveal reveal-delay-2">
+              <span><svg><use href="#icon-shield" /></svg></span>
+              <h3 data-i18n="benefits.trust.title">Проверенные контакты</h3>
+              <p data-i18n="benefits.trust.text">Работаю с надёжными поставщиками и уточняю детали до оплаты.</p>
+            </article>
+            <article class="benefit-card reveal reveal-delay-3">
+              <span><svg><use href="#icon-heart" /></svg></span>
+              <h3 data-i18n="benefits.support.title">Поддержка на связи</h3>
+              <p data-i18n="benefits.support.text">Сопровождаю заказ и отвечаю на вопросы на каждом этапе.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section process" id="process">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <p class="eyebrow" data-i18n="process.kicker">Простой процесс</p>
+              <h2 data-i18n="process.title">От запроса до получения — четыре шага</h2>
+            </div>
+          </div>
+          <ol class="process-list">
+            <li class="process-step reveal">
+              <span>01</span>
+              <div><h3 data-i18n="process.steps.request.title">Расскажите, что нужно</h3><p data-i18n="process.steps.request.text">Отправьте фото, ссылку, описание или просто идею.</p></div>
+            </li>
+            <li class="process-step reveal">
+              <span>02</span>
+              <div><h3 data-i18n="process.steps.selection.title">Получите варианты</h3><p data-i18n="process.steps.selection.text">Подберу предложения и уточню важные характеристики.</p></div>
+            </li>
+            <li class="process-step reveal">
+              <span>03</span>
+              <div><h3 data-i18n="process.steps.confirm.title">Подтвердите заказ</h3><p data-i18n="process.steps.confirm.text">Согласуем стоимость, сроки и детали перед покупкой.</p></div>
+            </li>
+            <li class="process-step reveal">
+              <span>04</span>
+              <div><h3 data-i18n="process.steps.delivery.title">Получите товар</h3><p data-i18n="process.steps.delivery.text">Остаюсь на связи и сопровождаю заказ до завершения.</p></div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section social">
+        <div class="container social-grid">
+          <div class="social-copy reveal">
+            <span class="pill"><svg class="icon"><use href="#icon-instagram" /></svg><span data-i18n="social.label">Больше жизни и новинок</span></span>
+            <h2 data-i18n="social.title">Загляните в Instagram</h2>
+            <p data-i18n="social.text">Обзоры товаров, поездки, новые поступления и честные заметки байера — всё там.</p>
+            <a class="button button-dark" href="https://www.instagram.com/zulfiya.buyer/" target="_blank" rel="noopener noreferrer">
+              <span data-i18n="social.action">Перейти в Instagram</span>
+              <svg class="icon"><use href="#icon-arrow" /></svg>
+            </a>
+          </div>
+          <div class="social-wall reveal reveal-delay" aria-hidden="true">
+            <div class="social-tile tile-one"><span>@zulfiya.buyer</span><strong>NEW<br />DROP</strong></div>
+            <div class="social-tile tile-two"><svg><use href="#icon-diamond" /></svg><small>fine jewelry</small></div>
+            <div class="social-tile tile-three"><span>CHINA</span><svg><use href="#icon-package" /></svg></div>
+            <div class="social-tile tile-four"><strong>12K+</strong><small>community</small></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contacts">
+        <div class="container">
+          <div class="contact-card reveal">
+            <span class="contact-noise"></span>
+            <div class="contact-ring"></div>
+            <div class="contact-content">
+              <p class="eyebrow eyebrow-light" data-i18n="contacts.kicker">Начнём с сообщения</p>
+              <h2 data-i18n="contacts.title">Расскажите, что вы ищете</h2>
+              <p data-i18n="contacts.text">Напишите в WhatsApp — обсудим задачу, бюджет и подходящее направление.</p>
+              <div class="contact-buttons">
+                <a class="button button-whatsapp js-whatsapp" href="#" data-whatsapp="general">
+                  <svg class="icon"><use href="#icon-message" /></svg>
+                  <span data-i18n="contacts.whatsapp">Написать в WhatsApp</span>
+                  <svg class="icon icon-small"><use href="#icon-arrow" /></svg>
+                </a>
+                <a class="button button-ghost" href="https://www.instagram.com/zulfiya.buyer/" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon"><use href="#icon-instagram" /></svg>
+                  <span data-i18n="contacts.instagram">Открыть Instagram</span>
+                </a>
+              </div>
+              <a class="phone-link" href="tel:+77024646441">
+                <svg class="icon"><use href="#icon-phone" /></svg>
+                <span><span data-i18n="contacts.phoneLabel">Телефон</span>: +7 702 464 64 41</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a class="brand" href="#top">
+          <span class="brand-mark">Z</span>
+          <span><strong>Zulfiya Buyer</strong><small data-i18n="footer.note">Товары из Китая, Турции и Армении</small></span>
+        </a>
+        <p>© <span data-year></span> · <span data-i18n="footer.rights">Все права защищены</span></p>
+        <div class="footer-socials">
+          <a class="js-whatsapp" href="#" data-whatsapp="general" aria-label="WhatsApp"><svg class="icon"><use href="#icon-message" /></svg></a>
+          <a href="https://www.instagram.com/zulfiya.buyer/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="icon"><use href="#icon-instagram" /></svg></a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
