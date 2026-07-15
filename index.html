@@ -228,15 +228,20 @@
           <div class="section-heading reveal">
             <div>
               <p class="eyebrow" data-i18n="directions.kicker">Что можно заказать</p>
-              <h2 data-i18n="directions.title">Четыре направления — один надёжный контакт</h2>
+              <h2 data-i18n="directions.title">Выберите направление — поиск и выкуп я беру на себя</h2>
             </div>
             <p class="section-intro" data-i18n="directions.intro">
-              Выберите нужное направление и получите доступ к актуальным товарам, новинкам и условиям заказа.
+              Покажу актуальные предложения, уточню детали у поставщика и помогу оформить заказ.
             </p>
           </div>
 
-          <p class="mobile-swipe-hint" data-i18n="directions.swipe">Листайте направления</p>
-          <div class="direction-grid">
+          <div class="mobile-carousel-bar">
+            <p class="mobile-swipe-hint" data-i18n="directions.swipe">Листайте направления →</p>
+            <button class="carousel-toggle" type="button" data-carousel-toggle="directions-carousel" aria-label="Приостановить автопрокрутку">
+              <span class="toggle-pause" aria-hidden="true">Ⅱ</span><span class="toggle-play" aria-hidden="true">▶</span>
+            </button>
+          </div>
+          <div class="direction-grid" id="directions-carousel">
             <article class="direction-card tone-rose is-featured reveal">
               <span class="popular-badge" data-i18n="directions.popular">Популярное направление</span>
               <div class="card-top">
@@ -309,7 +314,7 @@
           </div>
           <div class="about-copy reveal reveal-delay">
             <p class="eyebrow eyebrow-light" data-i18n="about.kicker">Обо мне</p>
-            <h2 data-i18n="about.title">Ваш человек по ту сторону витрины</h2>
+            <h2 data-i18n="about.title">Личный байер, который остаётся на связи</h2>
             <p class="about-text" data-i18n="about.text">
               Я Зульфия — байер, который превращает поиск товаров за рубежом в понятный и спокойный процесс. Знаю рынки, слежу за трендами и ценю долгосрочное доверие.
             </p>
@@ -327,10 +332,16 @@
           <div class="section-heading reveal">
             <div>
               <p class="eyebrow" data-i18n="benefits.kicker">Почему со мной удобно</p>
-              <h2 data-i18n="benefits.title">Покупка без лишней неопределённости</h2>
+              <h2 data-i18n="benefits.title">Спокойный заказ на каждом этапе</h2>
             </div>
           </div>
-          <div class="benefit-grid">
+          <div class="mobile-carousel-bar benefits-carousel-bar">
+            <p class="mobile-swipe-hint" data-i18n="benefits.swipe">Листайте преимущества →</p>
+            <button class="carousel-toggle" type="button" data-carousel-toggle="benefits-carousel" aria-label="Приостановить автопрокрутку">
+              <span class="toggle-pause" aria-hidden="true">Ⅱ</span><span class="toggle-play" aria-hidden="true">▶</span>
+            </button>
+          </div>
+          <div class="benefit-grid" id="benefits-carousel">
             <article class="benefit-card reveal">
               <span><svg><use href="#icon-globe" /></svg></span>
               <h3 data-i18n="benefits.market.title">Доступ к рынкам</h3>
@@ -360,7 +371,7 @@
           <div class="section-heading reveal">
             <div>
               <p class="eyebrow" data-i18n="process.kicker">Простой процесс</p>
-              <h2 data-i18n="process.title">От запроса до получения — четыре шага</h2>
+              <h2 data-i18n="process.title">От фотографии товара до получения заказа</h2>
             </div>
           </div>
           <ol class="process-list">
@@ -388,7 +399,7 @@
         <div class="container social-grid">
           <div class="social-copy reveal">
             <span class="pill"><svg class="icon"><use href="#icon-instagram" /></svg><span data-i18n="social.label">Больше жизни и новинок</span></span>
-            <h2 data-i18n="social.title">Загляните в Instagram</h2>
+            <h2 data-i18n="social.title">Новые подборки — каждый день</h2>
             <p data-i18n="social.text">Обзоры товаров, поездки, новые поступления и честные заметки байера — всё там.</p>
             <a class="button button-dark" href="https://www.instagram.com/zulfiya.buyer/" target="_blank" rel="noopener noreferrer">
               <span data-i18n="social.action">Перейти в Instagram</span>
@@ -411,7 +422,7 @@
             <div class="contact-ring"></div>
             <div class="contact-content">
               <p class="eyebrow eyebrow-light" data-i18n="contacts.kicker">Начнём с сообщения</p>
-              <h2 data-i18n="contacts.title">Расскажите, что вы ищете</h2>
+              <h2 data-i18n="contacts.title">Пришлите фото или ссылку — начнём поиск</h2>
               <p data-i18n="contacts.text">Напишите в WhatsApp — обсудим задачу, бюджет и подходящее направление.</p>
               <div class="contact-buttons">
                 <a class="button button-whatsapp js-whatsapp" href="#" data-whatsapp="general">

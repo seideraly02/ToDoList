@@ -17,29 +17,29 @@ const translations = {
     'hero.noteText': 'Подберу товар, проверю детали и помогу провести заказ до получения.',
     'hero.proofOne': 'Для себя и бизнеса', 'hero.proofTwo': 'Проверка перед выкупом', 'hero.proofThree': 'На связи до получения',
     'ticker.china': 'Китай', 'ticker.turkey': 'Турция', 'ticker.armenia': 'Армения', 'ticker.jewelry': 'Украшения', 'ticker.wholesale': 'Опт', 'ticker.retail': 'Розница',
-    'directions.kicker': 'Что можно заказать', 'directions.title': 'Четыре направления — один надёжный контакт',
-    'directions.intro': 'Выберите нужное направление и получите доступ к актуальным товарам, новинкам и условиям заказа.', 'directions.action': 'Получить подборку', 'directions.popular': 'Популярное направление', 'directions.swipe': 'Листайте направления →',
+    'directions.kicker': 'Что можно заказать', 'directions.title': 'Выберите направление — поиск и выкуп я беру на себя',
+    'directions.intro': 'Покажу актуальные предложения, уточню детали у поставщика и помогу оформить заказ.', 'directions.action': 'Получить подборку', 'directions.popular': 'Популярное направление', 'directions.swipe': 'Листайте направления →',
     'directions.china.title': 'Товары из Китая', 'directions.china.text': 'Широкий выбор товаров для дома, бизнеса, красоты и повседневной жизни.', 'directions.china.group': 'WhatsApp-группа Китай',
     'directions.turkey.title': 'Товары из Турции', 'directions.turkey.text': 'Одежда, текстиль и товары для тех, кто ценит качество и актуальный стиль.', 'directions.turkey.group': 'WhatsApp-группа Турция',
     'directions.armenia.title': 'Товары из Армении', 'directions.armenia.text': 'Особенные находки из Еревана для личных покупок и вашего ассортимента.', 'directions.armenia.group': 'WhatsApp-группа Армения',
     'directions.jewelry.title': 'Золото и бриллианты', 'directions.jewelry.text': 'Украшения с натуральными камнями и вниманием к каждой детали.', 'directions.jewelry.group': 'WhatsApp-группа украшения',
-    'benefits.kicker': 'Почему со мной удобно', 'benefits.title': 'Покупка без лишней неопределённости',
+    'benefits.kicker': 'Почему со мной удобно', 'benefits.title': 'Спокойный заказ на каждом этапе', 'benefits.swipe': 'Листайте преимущества →',
     'benefits.market.title': 'Доступ к рынкам', 'benefits.market.text': 'Актуальные предложения из разных стран в одном месте.',
     'benefits.choice.title': 'Осознанный выбор', 'benefits.choice.text': 'Помогаю сравнить варианты и подобрать товар под задачу и бюджет.',
     'benefits.trust.title': 'Проверенные контакты', 'benefits.trust.text': 'Работаю с надёжными поставщиками и уточняю детали до оплаты.',
     'benefits.support.title': 'Поддержка на связи', 'benefits.support.text': 'Сопровождаю заказ и отвечаю на вопросы на каждом этапе.',
-    'about.kicker': 'Обо мне', 'about.title': 'Ваш человек по ту сторону витрины',
+    'about.kicker': 'Обо мне', 'about.title': 'Личный байер, который остаётся на связи',
     'about.text': 'Я Зульфия — байер, который превращает поиск товаров за рубежом в понятный и спокойный процесс. Знаю рынки, слежу за трендами и ценю долгосрочное доверие.',
     'about.factOne': '12K+', 'about.factOneLabel': 'человек в сообществе', 'about.factTwo': '4', 'about.factTwoLabel': 'направления закупок',
     'about.factThree': 'B2B / B2C', 'about.factThreeLabel': 'работаю с бизнесом и частными клиентами',
-    'process.kicker': 'Простой процесс', 'process.title': 'От запроса до получения — четыре шага',
+    'process.kicker': 'Простой процесс', 'process.title': 'От фотографии товара до получения заказа',
     'process.steps.request.title': 'Расскажите, что нужно', 'process.steps.request.text': 'Отправьте фото, ссылку, описание или просто идею.',
     'process.steps.selection.title': 'Получите варианты', 'process.steps.selection.text': 'Подберу предложения и уточню важные характеристики.',
     'process.steps.confirm.title': 'Подтвердите заказ', 'process.steps.confirm.text': 'Согласуем стоимость, сроки и детали перед покупкой.',
     'process.steps.delivery.title': 'Получите товар', 'process.steps.delivery.text': 'Остаюсь на связи и сопровождаю заказ до завершения.',
-    'social.label': 'Больше жизни и новинок', 'social.title': 'Загляните в Instagram',
+    'social.label': 'Больше жизни и новинок', 'social.title': 'Новые подборки — каждый день',
     'social.text': 'Обзоры товаров, поездки, новые поступления и честные заметки байера — всё там.', 'social.action': 'Перейти в Instagram',
-    'contacts.kicker': 'Начнём с сообщения', 'contacts.title': 'Расскажите, что вы ищете',
+    'contacts.kicker': 'Начнём с сообщения', 'contacts.title': 'Пришлите фото или ссылку — начнём поиск',
     'contacts.text': 'Напишите в WhatsApp — обсудим задачу, бюджет и подходящее направление.', 'contacts.whatsapp': 'Написать в WhatsApp',
     'contacts.instagram': 'Открыть Instagram', 'contacts.phoneLabel': 'Телефон',
     'footer.note': 'Товары из Китая, Турции и Армении', 'footer.rights': 'Все права защищены'
@@ -55,29 +55,29 @@ const translations = {
     'hero.noteText': 'Тауарды таңдап, мәліметтерді тексеріп, тапсырысты алғанға дейін сүйемелдеймін.',
     'hero.proofOne': 'Өзіңізге және бизнеске', 'hero.proofTwo': 'Сатып алар алдында тексеру', 'hero.proofThree': 'Алғанға дейін байланыстамын',
     'ticker.china': 'Қытай', 'ticker.turkey': 'Түркия', 'ticker.armenia': 'Армения', 'ticker.jewelry': 'Әшекейлер', 'ticker.wholesale': 'Көтерме', 'ticker.retail': 'Бөлшек',
-    'directions.kicker': 'Не тапсырыс беруге болады', 'directions.title': 'Төрт бағыт — бір сенімді байланыс',
-    'directions.intro': 'Қажетті бағытты таңдап, өзекті тауарлар, жаңалықтар мен тапсырыс шарттарына қол жеткізіңіз.', 'directions.action': 'Таңдауды алу', 'directions.popular': 'Танымал бағыт', 'directions.swipe': 'Бағыттарды сырғытыңыз →',
+    'directions.kicker': 'Не тапсырыс беруге болады', 'directions.title': 'Бағытты таңдаңыз — іздеу мен сатып алуды өзім атқарамын',
+    'directions.intro': 'Өзекті ұсыныстарды көрсетіп, жеткізушіден мәліметтерді анықтап, тапсырысты рәсімдеуге көмектесемін.', 'directions.action': 'Таңдауды алу', 'directions.popular': 'Танымал бағыт', 'directions.swipe': 'Бағыттарды сырғытыңыз →',
     'directions.china.title': 'Қытай тауарлары', 'directions.china.text': 'Үйге, бизнеске, сұлулық пен күнделікті өмірге арналған кең таңдау.', 'directions.china.group': 'Қытай WhatsApp тобы',
     'directions.turkey.title': 'Түркия тауарлары', 'directions.turkey.text': 'Сапа мен заманауи стильді бағалайтындарға арналған киім және тоқыма.', 'directions.turkey.group': 'Түркия WhatsApp тобы',
     'directions.armenia.title': 'Армения тауарлары', 'directions.armenia.text': 'Жеке сатып алуға және ассортиментке арналған Ереванның ерекше тауарлары.', 'directions.armenia.group': 'Армения WhatsApp тобы',
     'directions.jewelry.title': 'Алтын және гауһар', 'directions.jewelry.text': 'Табиғи тастары бар, әр бөлшегіне мән берілген әшекейлер.', 'directions.jewelry.group': 'Әшекейлер WhatsApp тобы',
-    'benefits.kicker': 'Неге менімен ыңғайлы', 'benefits.title': 'Артық алаңдаусыз сатып алу',
+    'benefits.kicker': 'Неге менімен ыңғайлы', 'benefits.title': 'Әр кезеңде тыныш әрі түсінікті тапсырыс', 'benefits.swipe': 'Артықшылықтарды сырғытыңыз →',
     'benefits.market.title': 'Нарықтарға қолжетімділік', 'benefits.market.text': 'Әртүрлі елдердің өзекті ұсыныстары бір жерде.',
     'benefits.choice.title': 'Саналы таңдау', 'benefits.choice.text': 'Мақсат пен бюджетке сай тауар табуға көмектесемін.',
     'benefits.trust.title': 'Тексерілген байланыстар', 'benefits.trust.text': 'Сенімді жеткізушілермен жұмыс істеп, төлемге дейін мәліметтерді анықтаймын.',
     'benefits.support.title': 'Әрдайым байланыстамын', 'benefits.support.text': 'Тапсырысты сүйемелдеп, әр кезеңде сұрақтарға жауап беремін.',
-    'about.kicker': 'Мен туралы', 'about.title': 'Сөренің ар жағындағы сенімді адамыңыз',
+    'about.kicker': 'Мен туралы', 'about.title': 'Әрдайым байланыста болатын жеке байеріңіз',
     'about.text': 'Мен Зульфиямын — шетелден тауар іздеуді түсінікті әрі тыныш үдеріске айналдыратын байермін. Нарықты білемін және ұзақ мерзімді сенімді бағалаймын.',
     'about.factOne': '12K+', 'about.factOneLabel': 'қауымдастық мүшесі', 'about.factTwo': '4', 'about.factTwoLabel': 'сатып алу бағыты',
     'about.factThree': 'B2B / B2C', 'about.factThreeLabel': 'бизнес және жеке клиенттермен жұмыс',
-    'process.kicker': 'Қарапайым үдеріс', 'process.title': 'Өтінімнен алуға дейін — төрт қадам',
+    'process.kicker': 'Қарапайым үдеріс', 'process.title': 'Тауар фотосынан тапсырысты алғанға дейін',
     'process.steps.request.title': 'Не керегін айтыңыз', 'process.steps.request.text': 'Фото, сілтеме, сипаттама немесе идея жіберіңіз.',
     'process.steps.selection.title': 'Нұсқаларды алыңыз', 'process.steps.selection.text': 'Ұсыныстарды таңдап, маңызды сипаттамаларын анықтаймын.',
     'process.steps.confirm.title': 'Тапсырысты растаңыз', 'process.steps.confirm.text': 'Баға, мерзім және барлық мәліметті келісеміз.',
     'process.steps.delivery.title': 'Тауарды алыңыз', 'process.steps.delivery.text': 'Тапсырысты соңына дейін сүйемелдеймін.',
-    'social.label': 'Көбірек жаңалық пен өмір', 'social.title': 'Instagram-ға кіріңіз',
+    'social.label': 'Көбірек жаңалық пен өмір', 'social.title': 'Күн сайын жаңа таңдаулар',
     'social.text': 'Тауар шолулары, сапарлар, жаңа түсімдер және байердің шынайы жазбалары — бәрі сонда.', 'social.action': 'Instagram-ға өту',
-    'contacts.kicker': 'Хабарламадан бастайық', 'contacts.title': 'Не іздеп жүргеніңізді айтыңыз',
+    'contacts.kicker': 'Хабарламадан бастайық', 'contacts.title': 'Фото немесе сілтеме жіберіңіз — іздеуді бастайық',
     'contacts.text': 'WhatsApp-қа жазыңыз — міндетті, бюджетті және лайықты бағытты бірге талқылаймыз.', 'contacts.whatsapp': 'WhatsApp-қа жазу',
     'contacts.instagram': 'Instagram ашу', 'contacts.phoneLabel': 'Телефон',
     'footer.note': 'Қытай, Түркия және Армения тауарлары', 'footer.rights': 'Барлық құқықтар қорғалған'
@@ -143,6 +143,7 @@ function setLocale(nextLocale) {
   })
   localStorage.setItem('zulfiya-locale', locale)
   updateWhatsAppLinks()
+  updateCarouselLabels()
 }
 
 function closeMenu() {
@@ -292,6 +293,121 @@ if ('IntersectionObserver' in window) {
 } else {
   counters.forEach(animateCounter)
 }
+
+const carouselStates = new Map()
+const mobileCarouselQuery = window.matchMedia('(max-width: 600px)')
+
+function updateCarouselLabels() {
+  carouselStates.forEach((state) => {
+    const paused = state.userPaused || reducedMotion
+    state.button.classList.toggle('is-paused', paused)
+    state.button.setAttribute('aria-pressed', String(paused))
+    state.button.setAttribute(
+      'aria-label',
+      locale === 'kk'
+        ? (paused ? 'Автоматты айналдыруды бастау' : 'Автоматты айналдыруды тоқтату')
+        : (paused ? 'Запустить автопрокрутку' : 'Приостановить автопрокрутку'),
+    )
+  })
+}
+
+function createCarouselClone(element) {
+  const clone = element.cloneNode(true)
+  clone.classList.add('carousel-clone')
+  clone.classList.remove('reveal', 'reveal-delay', 'reveal-delay-1', 'reveal-delay-2', 'reveal-delay-3', 'is-visible')
+  clone.setAttribute('aria-hidden', 'true')
+  clone.removeAttribute('id')
+  clone.querySelectorAll('[id]').forEach((item) => item.removeAttribute('id'))
+  clone.querySelectorAll('a, button, [tabindex]').forEach((item) => item.setAttribute('tabindex', '-1'))
+  return clone
+}
+
+function initInfiniteCarousel(scroller) {
+  if (carouselStates.has(scroller) || scroller.children.length < 2) return
+
+  const originals = Array.from(scroller.children)
+  const before = originals.map(createCarouselClone)
+  const after = originals.map(createCarouselClone)
+  scroller.prepend(...before)
+  scroller.append(...after)
+  scroller.classList.add('is-infinite')
+
+  const button = document.querySelector(`[data-carousel-toggle="${scroller.id}"]`)
+  const state = {
+    button,
+    originals,
+    clones: [...before, ...after],
+    frame: 0,
+    lastTime: performance.now(),
+    pauseUntil: 0,
+    interacting: false,
+    userPaused: reducedMotion,
+    cycleStart: 0,
+    cycleWidth: 0,
+  }
+
+  function normalize() {
+    if (!state.cycleWidth) return
+    if (scroller.scrollLeft >= state.cycleStart + state.cycleWidth) scroller.scrollLeft -= state.cycleWidth
+    if (scroller.scrollLeft < state.cycleStart) scroller.scrollLeft += state.cycleWidth
+  }
+
+  function animate(now) {
+    normalize()
+    if (!state.userPaused && !state.interacting && !document.hidden && now > state.pauseUntil) {
+      const elapsed = Math.min(now - state.lastTime, 34)
+      scroller.scrollLeft += elapsed * 0.026
+      normalize()
+    }
+    state.lastTime = now
+    state.frame = window.requestAnimationFrame(animate)
+  }
+
+  state.onPointerDown = () => { state.interacting = true }
+  state.onPointerUp = () => { state.interacting = false; state.pauseUntil = performance.now() + 1600 }
+  state.onFocusIn = () => { state.pauseUntil = performance.now() + 3000 }
+  state.onToggle = () => { state.userPaused = !state.userPaused; updateCarouselLabels() }
+
+  scroller.addEventListener('pointerdown', state.onPointerDown, { passive: true })
+  window.addEventListener('pointerup', state.onPointerUp, { passive: true })
+  scroller.addEventListener('focusin', state.onFocusIn)
+  button.addEventListener('click', state.onToggle)
+  carouselStates.set(scroller, state)
+
+  window.requestAnimationFrame(() => {
+    state.cycleStart = originals[0].offsetLeft
+    state.cycleWidth = after[0].offsetLeft - state.cycleStart
+    scroller.scrollLeft = state.cycleStart
+    state.frame = window.requestAnimationFrame(animate)
+    updateCarouselLabels()
+  })
+}
+
+function destroyInfiniteCarousel(scroller) {
+  const state = carouselStates.get(scroller)
+  if (!state) return
+  window.cancelAnimationFrame(state.frame)
+  scroller.removeEventListener('pointerdown', state.onPointerDown)
+  window.removeEventListener('pointerup', state.onPointerUp)
+  scroller.removeEventListener('focusin', state.onFocusIn)
+  state.button.removeEventListener('click', state.onToggle)
+  state.clones.forEach((clone) => clone.remove())
+  scroller.classList.remove('is-infinite')
+  scroller.scrollLeft = 0
+  carouselStates.delete(scroller)
+}
+
+function syncInfiniteCarousels() {
+  document.querySelectorAll('#directions-carousel, #benefits-carousel').forEach((scroller) => {
+    if (mobileCarouselQuery.matches) initInfiniteCarousel(scroller)
+    else destroyInfiniteCarousel(scroller)
+  })
+}
+
+if (mobileCarouselQuery.addEventListener) mobileCarouselQuery.addEventListener('change', syncInfiniteCarousels)
+else mobileCarouselQuery.addListener(syncInfiniteCarousels)
+
+syncInfiniteCarousels()
 
 setLocale(locale)
 window.requestAnimationFrame(() => document.body.classList.add('is-loaded'))
